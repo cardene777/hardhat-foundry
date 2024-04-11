@@ -6,10 +6,9 @@ task("deploy:deploy-nft", "deploy ERC721 Contract")
   .addParam("contractName", "Contract Name")
   .addParam("name", "NFT Name")
   .addParam("symbol", "NFT Symbol")
-  .addParam("baseUri", "NFT Base URI")
   .setAction(async (args, hre) => {
     try {
-      const { contractName, name, symbol, baseUri } = args;
+      const { contractName, name, symbol } = args;
       const factory = (await hre.ethers.getContractFactory(
         contractName
       )) as ContractFactory;
@@ -17,7 +16,6 @@ task("deploy:deploy-nft", "deploy ERC721 Contract")
       const contract = await factory.deploy(
         name,
         symbol,
-        baseUri
       );
 
       await contract.waitForDeployment();
