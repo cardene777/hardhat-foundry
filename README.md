@@ -53,3 +53,41 @@ Compiler run successful!
 
 No tests found in project! Forge looks for functions that starts with `test`.
 ```
+
+### Deploy
+
+```bash
+npx hardhat deploy:deploy-nft --network z_kyoto --contract-name HardhatFoundryERC721 --name HardhatFoundryNft --symbol HFT
+```
+
+## Check Contract
+
+### Install
+
+```bash
+poetry shell
+poetry install
+```
+
+### Check Solc
+
+```bash
+solc-select install 0.8.23
+```
+
+- output
+
+```bash
+Installing solc '0.8.23'...
+Version '0.8.23' installed.
+```
+
+### Run
+
+```bash
+slither contracts
+
+# or
+
+slither contracts/HardhatFoundryERC721.sol
+```
