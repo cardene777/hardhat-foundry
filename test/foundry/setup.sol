@@ -6,12 +6,12 @@ import {HardhatFoundryERC721} from "../../contracts/HardhatFoundryERC721.sol";
 
 contract setup is Test {
     HardhatFoundryERC721 public nft;
-    address admin = address(1);
-    address user1 = address(2);
-    address user2 = address(3);
-    address user3 = address(4);
-    string name = "Cardene Hardhat Foundry";
-    string symbol = "CHFT";
+    address public admin = address(1);
+    address public user1 = address(2);
+    address public user2 = address(3);
+    address public user3 = address(4);
+    string public name = "Cardene Hardhat Foundry";
+    string public symbol = "CHFT";
 
     function setUp() public {
         vm.startPrank(admin);
