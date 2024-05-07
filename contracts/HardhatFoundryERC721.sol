@@ -60,7 +60,7 @@ contract HardhatFoundryERC721 is
     // =============================================================
 
     function _baseURI() internal pure override returns (string memory) {
-        return "https://example.com";
+        return "https://example.com/";
     }
 
     function _update(
