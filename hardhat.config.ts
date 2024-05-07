@@ -2,6 +2,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox-viem";
 import "@nomicfoundation/hardhat-foundry";
 import "@nomicfoundation/hardhat-verify";
+import "@typechain/hardhat";
 import "dotenv/config";
 import "./tasks";
 
@@ -64,6 +65,13 @@ const config: HardhatUserConfig = {
   },
   sourcify: {
     enabled: false,
+  },
+  typechain: {
+    outDir: "types",
+    target: "ethers-v6",
+    alwaysGenerateOverloads: false,
+    externalArtifacts: ["externalArtifacts/*.json"],
+    dontOverrideCompile: false,
   },
 };
 
