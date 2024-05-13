@@ -1,0 +1,36 @@
+name: Slither Analysis action
+
+on:
+  push:
+    branches: [develop] # 開発環境のブランチ名にしてください。
+  pull_request:
+    branches: [develop] # 開発環境のブランチ名にしてください。
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Slither
+        uses: crytic/slither-action@v0.3.0
+        id: slither
+        with:
+          target: "./" # ルートからhardhatの環境がある場所のディレクトリパスを入れてください。
+          fail-on: none
+          slither-args: --checklist --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/
+
+      # pullrequのコメントにMarkdownでレポートを出力する設定。
+      - name: Create/update checklist as PR comment
+        uses: actions/github-script@v6
+        if: github.event_name == 'pull_request'
+        env:
+          REPORT: ${{ steps.slither.outputs.stdout }}
+        with:
+          script: |
+            const script = require('.github/scripts/comment')
+            const header = '# Slither report'
+            const body = process.env.REPORT
+            await script({ github, context, header, body })
