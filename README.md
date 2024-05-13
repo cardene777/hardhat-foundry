@@ -19,6 +19,7 @@ rm -rf .git
 
 ```bash
 bun install
+npm install
 forge install
 ```
 
