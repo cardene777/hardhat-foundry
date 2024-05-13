@@ -70,7 +70,7 @@ poetry shell
 poetry install
 ```
 
-### Check Solc
+<!-- ### Check Solc
 
 ```bash
 solc-select install 0.8.23
@@ -81,14 +81,10 @@ solc-select install 0.8.23
 ```bash
 Installing solc '0.8.23'...
 Version '0.8.23' installed.
-```
+``` -->
 
 ### Run
 
 ```bash
-slither contracts
-
-# or
-
-slither contracts/HardhatFoundryERC721.sol
+slither .
 ```
