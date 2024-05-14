@@ -86,5 +86,5 @@ Version '0.8.23' installed.
 ### Run
 
 ```bash
-slither .
+slither . --compile-force-framework hardhat
 ```

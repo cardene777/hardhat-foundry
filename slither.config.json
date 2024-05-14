@@ -1,3 +1,4 @@
 {
-  "filter_paths": "contracts/mocks,node_modules"
+  "filter_paths": "contracts/mocks,lib,node_modules",
+  "compile_force_framework": "hardhat"
 }
