@@ -22,6 +22,9 @@ jobs:
           fail-on: none
           slither-args: --checklist --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/
 
+      - name: Verify script path
+        run: ls -l .github/scripts/comment.js
+
       # pullrequのコメントにMarkdownでレポートを出力する設定。
       - name: Create/update checklist as PR comment
         uses: actions/github-script@v6
@@ -31,11 +34,12 @@ jobs:
         with:
           script: |
             try {
-              const script = require('./.github/scripts/comment')
-              const header = '# Slither report'
-              const body = process.env.REPORT
-              await script({ github, context, header, body })
+              const scriptPath = require.resolve('./.github/scripts/comment');
+              const script = require(scriptPath);
+              const header = '# Slither report';
+              const body = process.env.REPORT;
+              await script({ github, context, header, body });
             } catch (error) {
-              console.error('Failed to load script:', error)
-              throw error
+              console.error('Failed to load script:', error);
+              throw error;
             }
