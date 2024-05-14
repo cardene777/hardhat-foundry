@@ -18,7 +18,7 @@ jobs:
         uses: crytic/slither-action@v0.3.0
         id: slither
         with:
-          target: "." # ルートからhardhatの環境がある場所のディレクトリパスを入れてください。
+          target: "./contract" # ルートからhardhatの環境がある場所のディレクトリパスを入れてください。
           fail-on: none
           slither-args: --checklist --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/
 
