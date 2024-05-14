@@ -30,7 +30,12 @@ jobs:
           REPORT: ${{ steps.slither.outputs.stdout }}
         with:
           script: |
-            const script = require('.github/scripts/comment')
-            const header = '# Slither report'
-            const body = process.env.REPORT
-            await script({ github, context, header, body })
+            try {
+              const script = require('./.github/scripts/comment')
+              const header = '# Slither report'
+              const body = process.env.REPORT
+              await script({ github, context, header, body })
+            } catch (error) {
+              console.error('Failed to load script:', error)
+              throw error
+            }
