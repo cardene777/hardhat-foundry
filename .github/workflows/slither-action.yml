@@ -22,9 +22,6 @@ jobs:
           fail-on: none
           slither-args: --checklist --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/
 
-      - name: Verify script path
-        run: ls -l .github/scripts/comment.js
-
       # pullrequのコメントにMarkdownでレポートを出力する設定。
       - name: Create/update checklist as PR comment
         uses: actions/github-script@v6
