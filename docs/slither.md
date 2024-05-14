@@ -141,8 +141,7 @@ module.exports = async ({ github, context, header, body }) => {
 
 - 上記の設定をしてpullrequを作成すると以下のようにレポートが生成されます。
 
-![Screenshot 2024-05-14 at 12 49 59](https://github.com/cardene777/hardhat-foundry/assets/61857866/d0fb263f-789c-47f3-a649-bcae6ce5f591)
-
+https://github.com/cardene777/hardhat-foundry/pull/1#issuecomment-2109224992
 
 ## レポートの見方
 
@@ -169,6 +168,15 @@ High > Medium > Low > Informational
 ```yaml
 High > Medium > Low > Informational
 ```
+
+## エラー
+
+pullrequ内にコメントする部分で権限エラーが出ることがあります。
+その時は「Settings > Actions > General > Workflow permissions」から「Read and write permissions」に設定してください。
+
+![Screenshot 2024-05-14 at 12 52 54](https://github.com/cardene777/hardhat-foundry/assets/61857866/cfaa30dd-1f72-460e-be9c-099068e658d3)
+
+[Github ActionsでResource not accessible by integrationが出た際の対処法](https://zenn.dev/tatsugon/articles/github-actions-permission-error#%E8%A7%A3%E6%B1%BA%E6%96%B9%E6%B3%95)
 
 ## オプション機能
 
