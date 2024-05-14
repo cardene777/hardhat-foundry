@@ -141,12 +141,14 @@ module.exports = async ({ github, context, header, body }) => {
 
 - 上記の設定をしてpullrequを作成すると以下のようにレポートが生成されます。
 
+![Screenshot 2024-05-14 at 12 49 59](https://github.com/cardene777/hardhat-foundry/assets/61857866/d0fb263f-789c-47f3-a649-bcae6ce5f591)
 
 
 ## レポートの見方
 
 ### 概要
 
+![Screenshot 2024-05-14 at 12 50 14](https://github.com/cardene777/hardhat-foundry/assets/61857866/ea612994-2328-46cf-b6fe-4000a4491b81)
 
 
 - 上記のようにざっくり項目がまとめられています。
@@ -158,7 +160,7 @@ High > Medium > Low > Informational
 
 ### 詳細
 
-
+![Screenshot 2024-05-14 at 12 50 27](https://github.com/cardene777/hardhat-foundry/assets/61857866/ae69c115-144c-49d4-87b7-ae52d162a142)
 
 - 先ほどの概要ともとに各項目の詳細がチェックリストでまとめられています。
 - Confidenceは信頼度を示しており、Slitherによる検知の正確性や確信の度合いを示しています。
